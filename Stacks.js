@@ -8,6 +8,12 @@ More information on Stacks can be found here:
   https://www.w3schools.com/dsa/dsa_data_stacks.php
   https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
 
+** To accomplish this data structure with built-in objects,
+you can use the Array object, which has the following functions:
+
+pop() - Removes the last element from an array and returns it. If the array is empty, undefined is returned and the array is not modified
+push() - Appends new elements to the end of an array, and returns the new length of the array.
+
 ---------------------------------------------------------------------------------
 Uncomment testing function for the data structure you would like to test below  */
 /*------------------------------------------------------------------------------*/

@@ -4,12 +4,7 @@
 -------------                Stacks and Queues                    ------------
  -----------------------------------------------------------------------------
 
-More information on the strucutres can be found here:
-Stack Data Structure:
-  https://www.w3schools.com/dsa/dsa_data_stacks.php
-  https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
-
-Queue Data Strucutre:
+More information on Queues can be found here:
   https://www.w3schools.com/dsa/dsa_data_queues.php
   https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
 
@@ -18,142 +13,6 @@ Uncomment testing function for the data structure you would like to test below  
 /*------------------------------------------------------------------------------*/
 
 //testMyQueue();
-//StackTesting();
-
-/*------------------------------------------------------------------------------*/
-
-/* ----------------------------------- */
-/* ---------    Stacks  ------------ */
-/* ----------------------------------- */
-
-class myStack {
-  /*
-  to create a fixed size array, use new Array(size).. however, you can still push to the end.
-  would need to have a restriction to not exceed var size.
-*/
-
-  //functions will include pop, push, peek, isEmpty(bool), isFull(with limited size arrays)
-
-  constructor(size) {
-    this.collection = new Array(size);
-    this.count = 0;
-    this.maxSize = size;
-  }
-
-  Push(value) {
-    //return true if added, false if not.
-    // exceed size restriction
-    if (this.count >= this.maxSize) {
-      console.log(
-        `stack overflow! can not add more than ${this.maxSize} items!`
-      );
-      return false;
-    } else {
-      //add element to the BACK of the stack
-      this.collection[this.count] = value;
-      this.count++;
-      console.log(`item "${value}" added`);
-
-      return true;
-    }
-  }
-
-  Pop() {
-    //ensure list is not empty, then delete
-    if (this.IsEmpty()) {
-      console.log("Stack is empty, can not remove!");
-      return undefined;
-    }
-    // delete the last element of the list and return its value
-    let returnValue = this.collection[this.count - 1];
-    delete this.collection[this.count];
-    this.count--;
-    return returnValue;
-  }
-
-  Peek() {
-    if (this.IsEmpty()) {
-      console.log("can not peek into empty stack!");
-      return undefined;
-    }
-    //return the back-most element of the stack
-    return this.collection[this.count - 1];
-  }
-
-  IsEmpty() {
-    // check if count > 0
-    if (this.count > 0) {
-      return false;
-    }
-    return true;
-  }
-}
-
-/* ----------------------------------- */
-/*           TESTING STACK              */
-/* ----------------------------------- */
-function StackTesting() {
-  let testStack = new myStack(3);
-
-  console.log("=== Testing Push ===");
-  console.assert(
-    testStack.Push(1) === true,
-    "Test Case 1 Failed: Should be able to push 1"
-  );
-  console.assert(
-    testStack.Push(2) === true,
-    "Test Case 2 Failed: Should be able to push 2"
-  );
-  console.assert(
-    testStack.Push(3) === true,
-    "Test Case 3 Failed: Should be able to push 3"
-  );
-  console.assert(
-    testStack.Push(4) === false,
-    "Test Case 4 Failed: Should not be able to push when full"
-  );
-
-  console.log("=== Current State of Stack ===");
-  console.log(testStack);
-
-  console.log("=== Testing Peek ===");
-  console.assert(
-    testStack.Peek() === 3,
-    "Test Case 5 Failed: Peek should return 3"
-  );
-
-  console.log("=== Testing Is Empty ===");
-  console.assert(
-    testStack.IsEmpty() === false,
-    "Test Case 6 Failed: Stack should not be empty"
-  );
-
-  console.log("=== Testing Pop ===");
-  console.assert(
-    testStack.Pop() === 3,
-    "Test Case 7 Failed: Pop should return 3"
-  );
-  console.assert(
-    testStack.Pop() === 2,
-    "Test Case 8 Failed: Pop should return 2"
-  );
-  console.assert(
-    testStack.Pop() === 1,
-    "Test Case 9 Failed: Pop should return 1"
-  );
-  console.assert(
-    testStack.Pop() === undefined,
-    "Test Case 10 Failed: Pop from empty stack should return undefined"
-  );
-
-  console.log("=== Testing Is Empty (after popping all items) ===");
-  console.assert(
-    testStack.IsEmpty() === true,
-    "Test Case 11 Failed: Stack should be empty after popping all items"
-  );
-
-  console.log("=== All Tests Completed ===");
-}
 
 /* ----------------------------------- */
 /* ------    QUEUE DATA STRUCTURE ---- */
@@ -216,9 +75,9 @@ class myQueue {
   }
 
   /**
- * Shifts all elements in an array left by 1.
-    @returns {*} the first item of the array
-*/
+   * Shifts all elements in an array left by 1.
+      @returns {*} the first item of the array
+  */
   shift() {
     for (let i = 0; i < this.count; i++) {
       this.collection[i] = this.collection[i + 1];

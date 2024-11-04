@@ -1,7 +1,7 @@
 /*
 ------------------------------------------------------------------------------
 -------------     Data Structures & Algorithms in JavaScript      ------------
--------------                Stacks and Queues                    ------------
+-------------                       Stacks                        ------------
  -----------------------------------------------------------------------------
 
 More information on Stacks can be found here:
@@ -15,12 +15,12 @@ pop() - Removes the last element from an array and returns it. If the array is e
 push() - Appends new elements to the end of an array, and returns the new length of the array.
 
 ---------------------------------------------------------------------------------
-Uncomment testing function for the data structure you would like to test below  */
-/*------------------------------------------------------------------------------*/
 
-//StackTesting();
+------------------        !!  Press *RUN* to test  !!      ----------------------
 
 /*------------------------------------------------------------------------------*/
+
+
 
 /**
  * Creates an empty, fixed size stack
@@ -167,3 +167,5 @@ function StackTesting() {
 
   console.log("=== All Tests Completed ===");
 }
+
+StackTesting();

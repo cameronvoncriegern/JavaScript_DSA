@@ -1,7 +1,7 @@
 /*
 ------------------------------------------------------------------------------
 -------------     Data Structures & Algorithms in JavaScript      ------------
--------------                Stacks and Queues                    ------------
+-------------                   Queues                            ------------
  -----------------------------------------------------------------------------
 
 More information on Queues can be found here:
@@ -16,10 +16,11 @@ push() - Appends new elements to the end of an array, and returns the new length
 shift() - Removes the first element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
 
 ---------------------------------------------------------------------------------
-Uncomment testing function for the data structure you would like to test below  */
+
+------------------        !!  Press *RUN* to test  !!      ----------------------
+
 /*------------------------------------------------------------------------------*/
 
-//testMyQueue();
 
 /* ----------------------------------- */
 /* ------    QUEUE DATA STRUCTURE ---- */
@@ -123,38 +124,44 @@ class myQueue {
 /* ---------------------------------- */
 /* -- QUEUE DATA STRUCTURE TESTING -- */
 /* ---------------------------------- */
-
 function testMyQueue() {
+
+  
   // Create a queue with a maximum size of 3
   const queue = new myQueue(3);
 
   console.log("=== Testing Enqueue ===");
-  console.assert(queue.enqueue(1) === true, "Test Case 1 Failed");
-  console.assert(queue.enqueue(2) === true, "Test Case 2 Failed");
-  console.assert(queue.enqueue(3) === true, "Test Case 3 Failed");
-  console.assert(queue.enqueue(4) === false, "Test Case 4 Failed"); // Should fail (overflow)
+  console.log("Attempting to add 1 to the queue (expect success):", queue.enqueue(1)); // Should return true
+  console.log("Attempting to add 2 to the queue (expect success):", queue.enqueue(2)); // Should return true
+  console.log("Attempting to add 3 to the queue (expect success):", queue.enqueue(3)); // Should return true
+  console.log("Attempting to add 4 to a full queue (expect failure):", queue.enqueue(4)); // Should return false
 
-  console.log("=== Current State of Queue ===");
-  console.log(queue.collection); // Expect: [1, 2, 3]
-  console.log("Count:", queue.count); // Expect: 3
+  console.log("\n=== Current State of Queue ===");
+  console.log("Queue Contents:", queue.collection); // Expected output: [1, 2, 3]
+  console.log("Current Count:", queue.count); // Expected output: 3
 
-  console.log("=== Testing Dequeue ===");
-  console.assert(queue.dequeue() === 1, "Test Case 5 Failed"); // Should return 1
-  console.assert(queue.dequeue() === 2, "Test Case 6 Failed"); // Should return 2
-  console.assert(queue.dequeue() === 3, "Test Case 7 Failed"); // Should return 3
-  console.assert(queue.dequeue() === false, "Test Case 8 Failed"); // Should fail (empty queue)
+  console.log("\n=== Testing Dequeue ===");
+  console.log("Removing first item (expect 1):", queue.dequeue()); // Should return 1
+  console.log("Removing next item (expect 2):", queue.dequeue()); // Should return 2
+  console.log("Removing next item (expect 3):", queue.dequeue()); // Should return 3
+  console.log("Attempting to remove from empty queue (expect failure):", queue.dequeue()); // Should return false
 
-  console.log("=== Testing Peek ===");
+  console.log("\n=== Testing Peek ===");
+  console.log("Peeking into empty queue (expect undefined):", queue.peek()); // Should return undefined
   queue.enqueue(5);
-  console.assert(queue.peek() === 5, "Test Case 9 Failed"); // Should return 5
+  console.log("Peeking into queue with item 5 (expect 5):", queue.peek()); // Should return 5
 
-  console.log("=== Testing isEmpty ===");
-  console.assert(queue.isEmpty() === false, "Test Case 10 Failed"); // Should return false
-  queue.dequeue(); // Remove item
-  console.assert(queue.isEmpty() === true, "Test Case 11 Failed"); // Should return true
+  console.log("\n=== Testing isEmpty ===");
+  console.log("Checking if queue is empty (expect false):", queue.isEmpty()); // Should return false
+  queue.dequeue(); // Remove the item
+  console.log("Checking if queue is empty after removing all items (expect true):", queue.isEmpty()); // Should return true
 
-  console.log("=== All Tests Passed ===");
+  console.log("\n=== All Tests Completed ===");
 }
 
-let test = [];
-test.pop;
+// Run the tests
+testMyQueue();
+
+
+
+testMyQueue();

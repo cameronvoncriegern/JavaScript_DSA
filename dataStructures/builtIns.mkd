@@ -1,0 +1,169 @@
+
+#  Useful Concepts and JS objects
+
+---
+
+### Table of Contents
+
+- [Useful Concepts and JS objects](#useful-concepts-and-js-objects)
+    - [Table of Contents](#table-of-contents)
+    - [Set](#set)
+      - [Common Functions](#common-functions)
+    - [Restrictions](#restrictions)
+    - [Common Usages](#common-usages)
+    - [Map](#map)
+      - [Common Functions](#common-functions-1)
+      - [Restrictions](#restrictions-1)
+    - [Arrays](#arrays)
+      - [Common Functions](#common-functions-2)
+      - [Higher-Order Functions](#higher-order-functions)
+      - [Common Usages](#common-usages-1)
+    - [Strings](#strings)
+      - [Common Functions](#common-functions-3)
+      - [Common Usages](#common-usages-2)
+    - [Objects](#objects)
+      - [Common Functions](#common-functions-4)
+      - [Common Usages](#common-usages-3)
+
+
+### Set
+
+A `Set` is a collection of unique values. Useful for storing distinct elements, checking existence quickly, or removing duplicates.
+
+#### Common Functions
+```javascript
+let mySet = new Set([1, 2, 3]);
+mySet.add(4);        // Adds an element to the set
+mySet.delete(2);     // Removes a specific element from the set
+mySet.has(1);        // Checks if a value exists in the set (returns true/false)
+mySet.size;          // Gets the number of unique elements in the set
+```
+
+ ### Restrictions
+  - Values are unique (duplicates are ignored).
+  - Set elements can be any type, including objects and arrays.
+  - Order is not guaranteed, so Sets are not ideal for ordered collections.
+
+ ### Common Usages
+  - Removing duplicates from an array:
+ ```javascript
+ const array = [1, 2, 2, 3, 4, 4];
+ const uniqueArray = [...new Set(array)];   // [1, 2, 3, 4]
+```
+  - Checking for the presence of a value in constant time (O(1))
+```javascript
+let mySet = newSet();
+set.add(1);
+set.has(1) // - returns true or false
+```
+___under the hood, mySet.has() runs IndexOf(), which returns -1 (to the has function) if it does not exist in the array___
+
+
+ ### Map
+
+A `Map` is a collection of key-value pairs, similar to objects but allows any type of key and preserves insertion order.
+
+#### Common Functions
+```javascript
+let myMap = new Map();
+myMap.set('key', 'value');      // Adds a key-value pair
+myMap.get('key');               // Retrieves the value for a given key
+myMap.has('key');               // Checks if a key exists in the map
+myMap.delete('key');            // Removes a key-value pair by key
+myMap.size;                     // Gets the number of key-value pairs in the map
+```
+ #### Restrictions
+  - Keys must be unique.
+  - Keys can be of any type, including functions, objects, and arrays.
+
+
+
+### Arrays
+
+Arrays are ordered collections of elements. They allow indexing, sorting, and manipulating data in a sequential format.
+
+#### Common Functions
+```javascript
+let arr = [1, 2, 3, 4];
+arr.push(5);             // Adds an element to the end
+arr.pop();               // Removes the last element
+arr.shift();             // Removes the first element
+arr.unshift(0);          // Adds an element to the beginning
+arr.includes(2);         // Checks if an element exists in the array
+arr.indexOf(3);          // Returns the index of the first occurrence of a value
+arr.slice(1, 3);         // Returns a shallow copy of a portion of the array
+arr.splice(2, 1);        // Removes elements and, optionally, adds new elements
+```
+
+#### Higher-Order Functions
+ ```javascript
+ arr.map(x => x * 2);         // Creates a new array with each element modified
+ arr.filter(x => x > 2);      // Creates a new array with elements that meet a condition
+arr.map(x => x * 2);         // Creates a new array with each element doubled
+arr.filter(x => x > 2);      // Filters the array for elements greater than 2
+arr.reduce((sum, x) => sum + x, 0); // Sums all elements starting from 0 returning the total.
+arr.sort((a, b) => a - b);   // Sorts the array in ascending order. Compares pairs of elements; a comes before b if a - b is negative.
+
+```
+
+ #### Common Usages
+
+ ```javascript
+ // - Implementing stacks and queues:
+ let stack = [];              // Push and pop for stack behavior
+ let queue = [];              // Push and shift for queue behavior
+
+ // - Finding unique elements:
+ const unique = [...new Set(arr)];
+```
+
+### Strings
+
+___JavaScript strings are immutable sequences of characters, useful for parsing, searching, and manipulating text data___
+
+ #### Common Functions
+ ```javascript
+
+ let str = "hello world";
+ str.charAt(0);               // Returns the character at a specific index
+ str.indexOf("world");        // Returns the starting index of a substring
+ str.slice(0, 5);             // Returns a portion of the string
+ str.toUpperCase();           // Converts the string to uppercase
+ str.toLowerCase();           // Converts the string to lowercase
+ str.split(" ");              // Splits the string into an array of substrings
+ str.replace("world", "JS");  // Replaces a substring with another
+```
+ #### Common Usages
+  - Reversing a string:
+ ```javascript
+ const reversed = str.split("").reverse().join("");
+ // - Checking if a string is a palindrome:
+ const isPalindrome = s => s === s.split("").reverse().join("");
+```
+
+### Objects
+
+ ___Objects in JavaScript are collections of key-value pairs. They're useful for storing structured data and mapping keys to values, like dictionaries___
+
+ #### Common Functions
+ 
+ ```javascript
+ let obj = { key: "value" };
+ obj["newKey"] = "newValue";       // Add a new key-value pair
+ delete obj.key;                   // Delete a key-value pair
+ Object.keys(obj);                 // Get an array of the object’s keys
+ Object.values(obj);               // Get an array of the object’s values
+ Object.entries(obj);              // Get an array of [key, value] pairs
+```
+
+ #### Common Usages
+  - Counting characters in a string:
+ ```javascript
+const countChars = str => {
+const counts = {};
+   for (let char of str) {
+     counts[char] = (counts[char] || 0) + 1;
+   }
+   return counts;
+ };
+```

@@ -1,0 +1,104 @@
+# Data Structures Repository
+
+_**This repository contains implementations of essential data structures in JavaScript**_, complete with testing and explanations. 
+
+These data structures are commonly encountered in technical interviews, particularly for internships and junior positions. Each data structure is organized in its own directory, making it easy to navigate and understand.
+
+### Empowering Your Coding Journey: Data Structures & Algorithms in JavaScript
+
+Many educational programs focus on teaching data structures and algorithms using languages like **C++ or C#**. However, there can often be a disconnect between this foundational knowledge and its practical application in technical interviews and real-world scenarios. This repository aims to bridge that gap, providing resources and examples that facilitate the transfer of these concepts into **JavaScript**. By making this knowledge more accessible, I hope to empower others to excel in their coding interviews and enhance their programming skills.
+
+
+
+## Table of Contents
+
+- [Data Structures Repository](#data-structures-repository)
+    - [Empowering Your Coding Journey: Data Structures \& Algorithms in JavaScript](#empowering-your-coding-journey-data-structures--algorithms-in-javascript)
+  - [Table of Contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+    - [Directory Structure](#directory-structure)
+  - [Data Structures](#data-structures)
+    - [Arrays](#arrays)
+    - [Linked Lists](#linked-lists)
+    - [Stacks](#stacks)
+    - [Queues](#queues)
+    - [Priority Queues](#priority-queues)
+    - [Hash Tables](#hash-tables)
+    - [Binary Search Trees (BST)](#binary-search-trees-bst)
+    - [AVL Trees](#avl-trees)
+    - [Red-Black Trees](#red-black-trees)
+    - [2-3-4 Trees](#2-3-4-trees)
+
+
+## Getting Started
+
+To get started, clone the repository to your local machine and navigate into the directory:
+
+```bash
+git clone https://github.com/cameronvoncriegern/JavaScript_DSA.git
+cd JavaScriptDSA
+```
+### Directory Structure
+```
+├── JavaScript_DSA/
+│   ├── dataStructures/
+│   |   |── builtIns.js - (built in ojbects, explanations)
+│   |   ├── priorityQueue.js - ( Queue w/ Qelement- priority/value)
+│   |   ├── Queues.js - (Basic queue w/ no priority)
+│   |   ├── Heaps.js
+│   |   ├── Stacks.js
+│   |   └── Trees.js
+|   ├── tests/
+│   |   ├── queueTest.js
+│   |   ├── priorityQueueTest.js
+│   |   └── stackTest.js
+└── README.md
+```
+## Data Structures
+
+This repository includes implementations of several fundamental data structures, each designed to help you understand their functionalities and use cases. Below is a brief overview of each data structure included in this repository:
+
+### Arrays
+Arrays are ordered collections of items that can be accessed by their index. They are the most basic data structure and are used for storing a fixed-size sequential collection of elements of the same type. Operations include accessing, inserting, and deleting elements.
+- [Learn more about Arrays (Wikipedia)](https://en.wikipedia.org/wiki/Array_data_structure)
+- [Learn more about Arrays (W3Schools)](https://www.w3schools.com/js/js_arrays.asp)
+
+### Linked Lists
+A linked list is a linear data structure where each element is a separate object, connected by pointers. Unlike arrays, linked lists can grow or shrink in size dynamically, making them more flexible for certain applications. They allow for efficient insertion and deletion of elements.
+- [Learn more about Linked Lists (Wikipedia)](https://en.wikipedia.org/wiki/Linked_list)
+- [Learn more about Linked Lists (W3Schools)](https://www.w3schools.com/dsa/dsa_theory_linkedlists.php)
+
+### Stacks
+Stacks are collections that follow the Last In, First Out (LIFO) principle. Elements can only be added or removed from the top of the stack. Stacks are useful for tasks such as backtracking algorithms, parsing expressions, and implementing undo functionality in applications.
+- [Learn more about Stacks (Wikipedia)](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
+- [Learn more about Stacks (W3Schools)](https://www.w3schools.com/dsa/dsa_data_stacks.php) 
+
+### Queues
+Queues are collections that follow the First In, First Out (FIFO) principle. Elements are added to the back and removed from the front. Queues are commonly used in scenarios like scheduling, breadth-first search, and managing requests in asynchronous programming.
+- [Learn more about Queues (Wikipedia)](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
+- [Learn more about Queues (W3Schools)](https://www.w3schools.com/dsa/dsa_data_queues.php) 
+
+### Priority Queues
+Priority queues are similar to regular queues but with an added feature: each element has a priority associated with it. Elements are dequeued based on their priority, not just their order of insertion. They are useful in scenarios like task scheduling, Dijkstra's algorithm, and simulations.
+- [Learn more about Priority Queues (Wikipedia)](https://en.wikipedia.org/wiki/Priority_queue)
+- [Learn more about Priority Queues (GeeksforGeeks)](https://www.geeksforgeeks.org/implementation-priority-queue-javascript/) 
+### Hash Tables
+Hash tables are a data structure that implements an associative array, a structure that can map keys to values. They use a hash function to compute an index into an array of buckets or slots, from which the desired value can be found. Hash tables offer efficient data retrieval and are widely used in applications like databases and caches.
+- [Learn more about Hash Tables (Wikipedia)](https://en.wikipedia.org/wiki/Hash_table)
+- [Learn more about Hash Tables (W3Schools)](https://www.w3schools.com/dsa/dsa_theory_hashtables.php) 
+
+### Binary Search Trees (BST)
+A Binary Search Tree is a node-based binary tree where each node has at most two children. For each node, the left child contains values less than the node’s key, and the right child contains values greater than the node’s key. BSTs are useful for quick lookups, insertions, and deletions, and are commonly used in searching and sorting applications.
+- [Learn more about Binary Search Trees (Wikipedia)](https://en.wikipedia.org/wiki/Binary_search_tree)
+
+### AVL Trees
+An AVL Tree is a self-balancing binary search tree where the difference between heights of left and right subtrees cannot be more than one for all nodes. AVL Trees provide faster lookups, insertions, and deletions in comparison to unbalanced binary search trees by maintaining a balance factor, which ensures that the tree remains balanced.
+- [Learn more about AVL Trees (Wikipedia)](https://en.wikipedia.org/wiki/AVL_tree)
+
+### Red-Black Trees
+A Red-Black Tree is a balanced binary search tree that ensures the path from the root to the farthest leaf is no more than twice the length of the shortest path. This balancing is achieved by assigning each node a color (red or black) and following certain rules to keep the tree balanced, making it efficient for insertion, deletion, and search operations. Red-Black Trees are commonly used in associative containers such as maps and sets.
+- [Learn more about Red-Black Trees (Wikipedia)](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
+
+### 2-3-4 Trees
+A 2-3-4 Tree is a self-balancing tree that can have nodes with two, three, or four children. This tree structure is more complex than binary trees but allows for faster data retrieval and easier balancing. Each node contains multiple keys and has a variable number of children, which helps maintain balance and ensures efficient operations. 2-3-4 Trees are often used as the foundation for B-Trees, making them ideal for large databases and file systems.
+- [Learn more about 2-3-4 Trees (Wikipedia)](https://en.wikipedia.org/wiki/2%E2%80%933%E2%80%934_tree)

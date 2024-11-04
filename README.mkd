@@ -42,9 +42,8 @@ cd JavaScriptDSA
 ```
 ├── JavaScript_DSA/
 │   ├── dataStructures/
-│   |   |── builtIns.js - (built in ojbects, explanations)
-│   |   ├── priorityQueue.js - ( Queue w/ Qelement- priority/value)
-│   |   ├── Queues.js - (Basic queue w/ no priority)
+│   |   ├── priorityQueue.js
+│   |   ├── Queues.js
 │   |   ├── Heaps.js
 │   |   ├── Stacks.js
 │   |   └── Trees.js
@@ -52,7 +51,9 @@ cd JavaScriptDSA
 │   |   ├── queueTest.js
 │   |   ├── priorityQueueTest.js
 │   |   └── stackTest.js
-└── README.md
+|   |
+|── builtIns.mkd - ( JS specific & basic concepts )
+└── README.mkd - ( overview, main concepts )
 ```
 ## Data Structures
 

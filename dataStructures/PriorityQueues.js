@@ -1,38 +1,34 @@
-/*
-------------------------------------------------------------------------------
--------------     Data Structures & Algorithms in JavaScript      ------------
--------------                  Priority Queues                    ------------
- -----------------------------------------------------------------------------
 
-More information on Queues can be found here:
-  https://www.w3schools.com/dsa/dsa_data_queues.php
-  https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
+/* --------------------------------------------------------------------------------- */
+/*                                  PRIORITY QUEUES                                  */
+/*-----------------------------------------------------------------------------------*/
+                                                                              
+/*    please refer to  test/priorityQueueTest.js file for testing of this data structure   
+                                                                              
+---------------------------------------------------------------------------------------
 
+ More information on Queues can be found here:
+   https://www.w3schools.com/dsa/dsa_data_queues.php
+   https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
 
- ** To accomplish this data structure with built-in objects,
+---------------------------------------------------------------------------------------
+ 
+** To accomplish this data structure with built-in objects,
 you can use the Array object, which has the following functions:
 
 push() - Appends new elements to the end of an array, and returns the new length of the array.
 shift() - Removes the first element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
 
----------------------------------------------------------------------------------
 
-------------------        !!  Press *RUN* to test  !!      ----------------------
-
-/*------------------------------------------------------------------------------*/
-
-
-/* -------------------------------------------- */
-/* ------    PRIORITY QUEUE DATA STRUCTURE ---- */
-/* -------------------------------------------- */
+---------------------------------------------------------------------------------------*/
 
 /**
  * Creates an item with both a value and a priority
  * @param {*} value The item to be stored in the queue
  * @param {number} priority
- */
+ **/
 
-class Qelement {
+export class Qelement {
     constructor(value,priority) {
         this.value = value;
         this.priority = priority;
@@ -53,7 +49,7 @@ class Qelement {
  * queue.enqueue(1);
  * const item = queue.dequeue(); // Removes and returns the first item
  */
-class myQueue {
+export class myPriorityQueue {
     constructor(size) {
       this.collection = new Array(size);
       this.maxSize = size;
@@ -135,54 +131,3 @@ class myQueue {
       return true;
     }
   }
-
-/* ---------------------------------- */
-/* -- PRIORITY QUEUE DATA STRUCTURE TESTING -- */
-/* ---------------------------------- */
-function testMyPriorityQueue() {
-  // Create a new priority queue with a maximum size of 5
-  const queue = new myPriorityQueue(5);
-  console.log("=== Testing Priority Queue ===");
-  console.log("Is the queue empty? (Expected: true):", queue.isEmpty()); // Expected: true
-
-  // Enqueue items with different priorities
-  console.log("Enqueue item 1 with priority 2 (Expected: true):", queue.enqueue("Item 1", 2));
-  console.log("Enqueue item 2 with priority 1 (Expected: true):", queue.enqueue("Item 2", 1));
-  console.log("Enqueue item 3 with priority 3 (Expected: true):", queue.enqueue("Item 3", 3));
-
-  // Peek at the front item
-  console.log("Peek at the front item (Expected: Qelement { value: 'Item 2', priority: 1 }):", queue.peek());
-
-  // Check if the queue is empty
-  console.log("Is the queue empty now? (Expected: false):", queue.isEmpty()); // Expected: false
-
-  // Check the queue size
-  console.log("Queue size (Expected: 3):", queue.count); // Expected: 3
-
-  // Dequeue items and check the output
-  console.log("Dequeue (Expected: Qelement { value: 'Item 2', priority: 1 }):", queue.dequeue());
-  console.log("Dequeue (Expected: Qelement { value: 'Item 1', priority: 2 }):", queue.dequeue());
-
-  // Peek after some dequeues
-  console.log("Peek after dequeues (Expected: Qelement { value: 'Item 3', priority: 3 }):", queue.peek());
-
-  // Attempt to dequeue until queue is empty
-  console.log("Dequeue (Expected: Qelement { value: 'Item 3', priority: 3 }):", queue.dequeue());
-  console.log("Dequeue on empty queue (Expected: false, 'cannot dequeue from empty queue'): ", queue.dequeue());
-
-  // Attempt to peek on an empty queue
-  console.log("Peek on empty queue (Expected: undefined, 'cannot peek into an empty queue'): ", queue.peek());
-
-  // Attempt to enqueue more than the max size
-  console.log("Enqueue item 4 with priority 1 (Expected: true):", queue.enqueue("Item 4", 1));
-  console.log("Enqueue item 5 with priority 4 (Expected: true):", queue.enqueue("Item 5", 4));
-  console.log("Enqueue item 6 with priority 2 (Expected: true):", queue.enqueue("Item 6", 2));
-  console.log("Enqueue item 7 with priority 5 (Expected: true):", queue.enqueue("Item 7", 5));
-  console.log("Enqueue item 8 with priority 6 (Expected: exceeded queue maxsize, cannot add item):", queue.enqueue("Item 8", 6));
-
-  // Final check on queue size after all operations
-  console.log("Final queue size (Expected: 5):", queue.count); // Expected: 5
-}
-
-// Run the test function for the priority queue
-testMyPriorityQueue();
